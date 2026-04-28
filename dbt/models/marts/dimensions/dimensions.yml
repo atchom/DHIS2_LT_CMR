@@ -1,0 +1,89 @@
+version: 2
+
+models:
+  - name: dim_patient
+    description: "Dimension contenant les informations démographiques et socio-économiques des patients"
+    columns:
+      - name: id_patient
+        description: "Identifiant unique du patient"
+        tests:
+          - unique
+          - not_null
+      - name: code_patient
+        description: "Code unique du patient"
+      - name: nin
+        description: "Numéro d'identification nationale"
+      - name: date_naissance
+        description: "Date de naissance du patient"
+      - name: age_ans
+        description: "Âge en années"
+      - name: sexe
+        description: "Sexe du patient (M/F)"
+      - name: tranche_age
+        description: "Tranche d'âge catégorisée"
+      - name: statut_vital
+        description: "Statut vital du patient (VIVANT/DECEDE)"
+
+  - name: dim_structure_sante
+    description: "Dimension des établissements de santé"
+    columns:
+      - name: id_structure
+        description: "Identifiant unique de la structure"
+        tests:
+          - unique
+          - not_null
+      - name: nom_structure
+        description: "Nom de l'établissement de santé"
+      - name: type_structure
+        description: "Type de structure (hôpital, centre de santé, etc.)"
+      - name: actif
+        description: "Indique si la structure est active"
+
+  - name: dim_maladie
+    description: "Dimension des maladies avec code CIM-10"
+    columns:
+      - name: id_maladie
+        description: "Identifiant unique de la maladie"
+        tests:
+          - unique
+          - not_null
+      - name: nom_maladie
+        description: "Nom de la maladie"
+      - name: code_cim10
+        description: "Code CIM-10 de la maladie"
+
+  - name: dim_geographie
+    description: "Dimension géographique hiérarchique"
+    columns:
+      - name: id_geographie
+        description: "Identifiant unique de l'entité géographique"
+        tests:
+          - unique
+          - not_null
+      - name: region
+        description: "Région"
+      - name: departement
+        description: "Département"
+      - name: arrondissement
+        description: "Arrondissement"
+      - name: commune
+        description: "Commune"
+      - name: quartier
+        description: "Quartier"
+
+  - name: dim_temps
+    description: "Dimension temporelle pour l'analyse chronologique"
+    columns:
+      - name: id_temps
+        description: "Identifiant temporel (format YYYYMMDD)"
+        tests:
+          - unique
+          - not_null
+      - name: date_complete
+        description: "Date complète"
+      - name: annee
+        description: "Année"
+      - name: mois
+        description: "Mois (1-12)"
+      - name: trimestre
+        description: "Trimestre (1-4)"
