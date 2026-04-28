@@ -1,0 +1,79 @@
+version: 2
+
+models:
+  - name: fct_alertes_epidemiques
+    description: "Faits sur les alertes épidémiques au niveau individuel"
+    columns:
+      - name: id_alerte
+        description: "Identifiant unique de l'alerte"
+        tests:
+          - unique
+          - not_null
+      - name: id_geographie
+        description: "Clé étrangère vers dim_geographie"
+      - name: id_maladie
+        description: "Clé étrangère vers dim_maladie"
+      - name: id_temps_alerte
+        description: "Clé étrangère vers dim_temps (date d'alerte)"
+      - name: nb_cas_confirmes
+        description: "Nombre de cas confirmés"
+      - name: nb_deces
+        description: "Nombre de décès"
+      - name: letalite_calculee
+        description: "Taux de létalité calculé (%)"
+      - name: niveau_alerte
+        description: "Niveau de l'alerte (PANDEMIE/EPIDEMIE/ALERTE)"
+
+  - name: fct_alertes_par_zone
+    description: "Faits sur les alertes agrégées par zone géographique"
+    columns:
+      - name: nom_maladie
+        description: "Nom de la maladie"
+      - name: id_maladie
+        description: "Clé étrangère vers dim_maladie"
+      - name: nb_alertes
+        description: "Nombre d'alertes"
+      - name: cas_confirmes
+        description: "Nombre de cas confirmés"
+      - name: deces
+        description: "Nombre de décès"
+      - name: taux_alerte_1000
+        description: "Taux d'alerte pour 1000 habitants"
+      - name: taux_attaque
+        description: "Taux d'attaque (%)"
+
+  - name: fct_alertes_par_maladie
+    description: "Faits sur les alertes agrégées par maladie"
+    columns:
+      - name: id_maladie
+        description: "Clé étrangère vers dim_maladie"
+        tests:
+          - not_null
+      - name: nb_alertes
+        description: "Nombre total d'alertes"
+      - name: total_cas_confirmes
+        description: "Total des cas confirmés"
+      - name: total_deces
+        description: "Total des décès"
+      - name: letalite_calculee
+        description: "Taux de létalité calculé (%)"
+      - name: taux_notification_oms
+        description: "Taux de notification à l'OMS (%)"
+
+  - name: fct_patients_par_zone
+    description: "Faits sur la distribution des patients par zone"
+    columns:
+      - name: id_geographie
+        description: "Clé étrangère vers dim_geographie"
+      - name: nb_patients
+        description: "Nombre total de patients"
+      - name: nb_hommes
+        description: "Nombre d'hommes"
+      - name: nb_femmes
+        description: "Nombre de femmes"
+      - name: age_moyen
+        description: "Âge moyen des patients"
+      - name: enfants_0_5
+        description: "Nombre d'enfants de 0-5 ans"
+      - name: personnes_agees_60_plus
+        description: "Nombre de personnes âgées de 60+ ans"
