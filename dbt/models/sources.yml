@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw
+    database: DHIS2_LT_CMR_DB
+    schema: RAW
+    tables:
+      - name: raw_structures_sante
+      - name: raw_patients_par_zone  # Nouvelle table ajoutée
+      - name: raw_patients  # Nouvelle table ajoutée
+      - name: raw_alertes_par_zone  # Nouvelle table ajoutée
+      - name: raw_alertes_par_maladie  # Nouvelle table ajoutée
+      - name: raw_alertes_epidemiques  # Nouvelle table ajoutée
