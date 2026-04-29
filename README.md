@@ -14,10 +14,8 @@
 - [📁 Structure du projet dbt](#-structure-du-projet-dbt)
 - [📈 Export Power BI (vues)](#-export-power-bi-vues)
 - [🗺️ Dashboards Power BI](#️-dashboards-power-bi)
-- [🚀 Installation & Utilisation](#-installation--utilisation)
-- [📅 Planning](#-planning)
-- [🤝 Équipe projet](#-équipe-projet)
-- [📄 Licence](#-licence)
+- [🚀 Conclusion](#️-conclusion)
+
 
 ---
 ## 🎯 Objectifs
