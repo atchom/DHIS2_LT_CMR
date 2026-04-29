@@ -112,5 +112,57 @@ dbt_dhis2_dw/
 | | `dimensions/` | Tables de référence (géographie, maladies, patients, temps, structures de santé) qui décrivent les entités du domaine. |
 | | `facts/` | Tables de faits (alertes épidémiques, patients par zone) contenant les mesures et indicateurs clés. |
 
+## 🗄️ Structure Snowflake – DHIS2_LT_CMR_DB
+```text
+DHIS2_LT_CMR_DB
+├── INFORMATION_SCHEMA          # Métadonnées système
+├── PUBLIC                      # Schéma public par défaut
+│
+├── RAW                         # Données brutes importées
+│   ├── Tables (6)
+│   │   ├── RAW_ALERTES_EPIDEMIQUES
+│   │   ├── RAW_ALERTES_PAR_MALADIE
+│   │   ├── RAW_ALERTES_PAR_ZONE
+│   │   ├── RAW_PATIENTS
+│   │   ├── RAW_PATIENTS_PAR_ZONE
+│   │   └── RAW_STRUCTURES_SANTE
+│   └── Stages (1)
+│       └── STAGE_INTERNAL2
+│
+├── RAW_STAGING                 # Couche de staging (nettoyage)
+│   └── Tables (6)
+│       ├── STG_ALERTES_EPIDEMIQUES
+│       ├── STG_ALERTES_PAR_MALADIE
+│       ├── STG_ALERTES_PAR_ZONE
+│       ├── STG_PATIENTS
+│       ├── STG_PATIENTS_PAR_ZONE
+│       └── STG_STRUCTURES_SANTE
+│
+├── RAW_DIMENSIONS              # Tables de dimensions
+│   └── Tables (5)
+│       ├── DIM_GEOGRAPHIE
+│       ├── DIM_MALADIE
+│       ├── DIM_PATIENT
+│       ├── DIM_STRUCTURE_SANTE
+│       └── DIM_TEMPS
+│
+└── RAW_FACTS                   # Tables de faits
+    └── Tables (4)
+        ├── FCT_ALERTES_EPIDEMIQUES
+        ├── FCT_ALERTES_PAR_MALADIE
+        ├── FCT_ALERTES_PAR_ZONE
+        └── FCT_PATIENTS_PAR_ZONE
+```
+
+``
+| Schéma Snowflake | Rôle | Nombre d'objets |
+|:-----------------|:-----|:----------------|
+| **RAW** | Données sources brutes (import PostgreSQL/CSV) | 6 tables + 1 stage |
+| **RAW_STAGING** | Données nettoyées et standardisées par dbt (`stg_*`) | 6 tables |
+| **RAW_DIMENSIONS** | Tables de dimensions métier (`dim_*`) | 5 tables |
+| **RAW_FACTS** | Tables de faits avec indicateurs (`fct_*`) | 4 tables |
+
+``
 ## 📊 Pipeline ETL de Données Sanitaires
 ![Pipeline ETL DHIS2](https://raw.githubusercontent.com/atchom/DHIS2_LT_CMR/0044ae4d3e0be4261c0fa93f1e58b98fe947aa30/images/Pipeline_Etl_DHIS2.png)
+
