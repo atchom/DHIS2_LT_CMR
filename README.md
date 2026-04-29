@@ -45,6 +45,11 @@ RÉGION DU LITTORAL
 ├── Département Sanaga-Maritime (Edéa)
 └── Département Nkam (Yabassi)
 ```
+> ⚠️  **AVERTISSEMENT** 🚨 🚨 🚨 🚨
+>  Les données, chiffres et indicateurs présentés dans ce projet sont **fictifs** et utilisés **uniquement à des fins de démonstration**.  
+>  Ils ne reflètent en aucun cas la situation épidémiologique réelle de la région du Littoral (Cameroun).
+
+
 🏥 **Structures couvertes :** Hôpitaux de district, CSI, cliniques privées, centres confessionnels et spécialisés.
 
 ---
@@ -166,3 +171,82 @@ DHIS2_LT_CMR_DB
 ## 📊 Pipeline ETL de Données Sanitaires
 ![Pipeline ETL DHIS2](https://raw.githubusercontent.com/atchom/DHIS2_LT_CMR/0044ae4d3e0be4261c0fa93f1e58b98fe947aa30/images/Pipeline_Etl_DHIS2.png)
 
+---
+
+## 👥 Profil des Patients – Analyse Démographique
+
+Après avoir présenté l'architecture technique et le pipeline de données, voici un aperçu des analyses démographiques produites par le système. Ce dashboard Power BI présente le profil des patients de la région du Littoral sur la période 2024-2026.
+
+**Indicateurs clés affichés :**
+- Répartition par sexe et âge
+- Top quartiers les plus représentés
+- Top maladies avec cas confirmés et décès
+- Synthèse des alertes épidémiques
+
+![Profil des Patients](https://raw.githubusercontent.com/atchom/DHIS2_LT_CMR/main/images/dhis2_page.jpg)
+
+---
+> ⚠️ **AVERTISSEMENT**  🚨 🚨 🚨 🚨
+>  Les données, chiffres et indicateurs présentés dans ce projet sont **fictifs** et utilisés **uniquement à des fins de démonstration**.  
+>  Ils ne reflètent en aucun cas la situation épidémiologique réelle de la région du Littoral (Cameroun).
+
+## 🦠 Tableau de Bord – Surveillance Épidémiologique
+
+Ce dashboard présente une vue synthétique de la situation épidémiologique dans la région du Littoral. Il regroupe les indicateurs clés de surveillance, la répartition géographique des cas et le suivi des investigations en cours.
+
+**Indicateurs de synthèse :**
+- **Cas confirmés, décès, taux de létalité**
+- **Évolution mensuelle** des cas sur l'année
+- **Répartition par département** et par maladie
+- **Suivi des investigations** et notifications OMS
+
+![Carte Région du Littoral](https://raw.githubusercontent.com/atchom/DHIS2_LT_CMR/refs/heads/main/images/Best_map.jpg)
+
+---
+## ✅ Conclusion
+
+Ce projet illustre la conception d'un **système de surveillance épidémiologique moderne** combinant **Snowflake**, **dbt** ,**Qgis** et **Power BI** pour le suivi des maladies prioritaires dans la région du Littoral (Cameroun).
+
+### 🎯 Ce qui a été réalisé
+
+| Axe | Réalisation |
+|:----|:-------------|
+| **Architecture Data** | Mise en place d'un Data Warehouse Snowflake avec une architecture en étoile (dimensions + faits) |
+| **Pipeline ETL** | Transformation des données brutes via dbt, de la couche RAW jusqu'aux marts exposés à Power BI |
+| **Cartographie SIG** | Création de cartes géographiques avec QGIS pour visualiser les départements, localités et la couverture sanitaire de la région du Littoral |
+| **Visualisation** | Création de dashboards interactifs (profil patients, surveillance épidémiologique, couverture géographique) |
+| **Alertes** | Automatisation des seuils d'alerte pour les maladies prioritaires (choléra, paludisme, rougeole, etc.) |
+| **Partenariat** | Suivi des conventions public-privé entre structures sanitaires |
+
+### 🔧 Compétences clés démontrées
+
+- **Modélisation de données** : Conception d'un schéma en étoile adapté aux besoins métier
+- **dbt** : Écriture de modèles modulaires (staging, intermediate, marts) avec tests et documentation
+- **Snowflake** : Gestion des schémas, stages et tables pour un entrepôt de données performant
+- **Power BI** : Création de dashboards analytiques interactifs
+- **QGIS** : Cartographie SIG pour l'analyse spatiale des données de santé
+- **Git/GitHub** : Versionnement du code et documentation professionnelle
+
+### 🚀 Perspectives d'évolution
+
+- Intégration de données en **temps réel** via l'API DHIS2
+- Mise en place de **notifications automatiques** (email/SMS) pour les alertes épidémiques
+- Extension à d'autres **régions du Cameroun**
+- Cartes **QGIS avancées** avec analyses spatiales (zones à risque, densité de cas, accessibilité aux soins)
+- Application de modèles **prédictifs** (machine learning) pour anticiper les flambées épidémiques
+
+> 💡 *Ce projet est une démonstration technique. Toutes les données présentées sont fictives et ne reflètent pas la situation sanitaire réelle de la région du Littoral.*
+
+---
+<p align="center">
+  <b>Développé avec ❤️ pour la santé publique</b><br>
+  <i>Douala, Cameroun – 2026</i><br><br>
+  <a href="mailto:votre.email@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
+  </a>
+  &nbsp;
+  <a href="https://wa.me/237676556836">
+    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp"/>
+  </a>
+</p>
+Rendu visuel
