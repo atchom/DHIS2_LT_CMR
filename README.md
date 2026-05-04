@@ -166,7 +166,7 @@ DHIS2_LT_CMR_DB
 | **RAW_FACTS** | Tables de faits avec indicateurs (`fct_*`) | 4 tables |
 
 ``
-## 📊 Pipeline ETL de Données Sanitaires
+## 📊 Pipeline ELT de Données Sanitaires
 ![Pipeline ETL DHIS2](https://raw.githubusercontent.com/atchom/DHIS2_LT_CMR/0044ae4d3e0be4261c0fa93f1e58b98fe947aa30/images/Pipeline_Etl_DHIS2.png)
 
 ---
@@ -210,7 +210,7 @@ Ce projet illustre la conception d'un **système de surveillance épidémiologiq
 | Axe | Réalisation |
 |:----|:-------------|
 | **Architecture Data** | Mise en place d'un Data Warehouse Snowflake avec une architecture en étoile (dimensions + faits) |
-| **Pipeline ETL** | Transformation des données brutes via dbt, de la couche RAW jusqu'aux marts exposés à Power BI |
+| **Pipeline ELT** | Transformation des données brutes via dbt, de la couche RAW jusqu'aux marts exposés à Power BI |
 | **Cartographie SIG** | Création de cartes géographiques avec QGIS pour visualiser les départements, localités et la couverture sanitaire de la région du Littoral |
 | **Visualisation** | Création de dashboards interactifs (profil patients, surveillance épidémiologique, couverture géographique) |
 | **Alertes** | Automatisation des seuils d'alerte pour les maladies prioritaires (choléra, paludisme, rougeole, etc.) |
